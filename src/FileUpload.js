@@ -254,12 +254,12 @@ class FileUpload {
   }
 
   /**
-   * Check if the current browser supports the DataTransfer constructor.
+   * Check if the current browser supports the DataTransfer constructor. PS: changed to always false in order to remove odd bug from adding new images on multiple "true"
    */
   dataTransferCheck () {
     try {
       new DataTransfer() // eslint-disable-line
-      this.supportsDataTransfers = true
+      this.supportsDataTransfers = false
     } catch (err) {
       this.supportsDataTransfers = false
     }
